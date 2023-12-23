@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Jua&family=Poppins:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    font-family: "Poppins", "sans-serif";
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  animation: underlineHoverAnimation 0.3s ease-in-out;
+}
+
+@keyframes underlineHoverAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.nav-link.active::after {
+  width: 100%;
+  animation: underlineAnimation 0.3s ease-in-out;
+}
+
+@keyframes underlineAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
